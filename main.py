@@ -26,7 +26,7 @@ def train_and_evaluate_model(model, X_train, y_train, X_test, y_test):
 # Veri Yükleme
 @st.cache_data
 def load_data():
-    data = pd.read_csv("coc81.csv", delimiter=",")
+    data = pd.read_csv("datasets/coc81.csv", delimiter=",")
     data.columns = data.columns.str.strip().str.replace('[$?]', '', regex=True)
     if 'project_id' in data.columns:
         data.drop('project_id', axis=1, inplace=True)
